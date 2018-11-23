@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat App</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <script src="socket.io/socket.io.js"></script>
+
+</head>
+<body>
+
+<div class="container-float">
+
+    <div class="header">
+
+        <h2 class="ml-4 my-auto logo-name">Chat Buzz</h2>
+        <div class="mx-auto my-auto ">
+            <input type="text" class="distance-input" placeholder="Enter Distance Here">
+            <select name="cars" class="distance-unit">
+                <option value="1">m</option>
+                <option value="1000">km</option>
+                <option value="1609.344">mile</option>
+            </select>
+        </div>
+        <button  class="profile_name">{{ profile.name}}</button>
+        <button class="all_messages">Messages</button><div class="msg-noti">5</div>
+
+        <button href="/logout" class="logout"><a href="/logout">Logout</a></button>
+        <p style="display: none" class="login_user_id">{{ profile.user}}</p>
+
+    </div>
+
+    <div class="main">
+
+        <div class="left-section" id="left-section">
+
+        </div>
+
+        <div class="middle-section" id="middle-section">
+
+        </div>
+
+        <div class="right-section">
+            <div class="heading text-center">Near by You !</div>
+
+            <ul id="list" class="members" >
+            <center>
+            </center>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="float-right mr-4">All right reserved</div>
+    </div>
+
+    <!--
+            <input type="text" id="demo1">
+            <input type="text" id="demo2">
+
+            <div class="container" id="login-container">
+                <div class="row">
+                    <input id="username" class="col form-control">
+                    <button id="login" class="btn btn-info col">LOGIN</button>
+                </div>
+            </div>
+
+            <div class="container" id="chat-container">
+                <div class="row">
+                    <input id="message" class="col form-control">
+                    <button id="send" class="btn btn-info col">SEND</button>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <ul id="list"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class='icons'>
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 299.997 299.997"><path d="M149.996,0C67.157,0,0.001,67.158,0.001,149.997c0,82.837,67.156,150,149.995,150s150-67.163,150-150    C299.996,67.156,232.835,0,149.996,0z M150.453,220.763v-0.002h-0.916H85.465c0-46.856,41.152-46.845,50.284-59.097l1.045-5.587    c-12.83-6.502-21.887-22.178-21.887-40.512c0-24.154,15.712-43.738,35.089-43.738c19.377,0,35.089,19.584,35.089,43.738    c0,18.178-8.896,33.756-21.555,40.361l1.19,6.349c10.019,11.658,49.802,12.418,49.802,58.488H150.453z"></path></svg>
+            </div>-->
+
+</div>
+
+<!--<h1 class="text-center">Chat App</h1>
+
+<input type="text" id="demo1"></input>
+<input type="text" id="demo2"></input>
+
+<div class="container" id="login-container">
+    <div class="row">
+        <input id="username" class="col form-control">
+        <button id="login" class="btn btn-info col">LOGIN</button>
+    </div>
+</div>
+
+<div class="container" id="chat-container">
+    <div class="row">
+        <input id="message" class="col form-control">
+        <button id="send" class="btn btn-info col">SEND</button>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <ul id="list"></ul>
+        </div>
+    </div>
+</div>-->
+<script src="javascripts/socket.js"></script>
+<script src="/javascripts/text.js"></script>
+
+</body>
+</html>

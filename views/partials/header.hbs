@@ -1,0 +1,57 @@
+
+<nav class="navbar navbar-expand-lg navbar-light ">
+    <a class="navbar-brand font22 fweight500" href="/" style="color: whitesmoke">Green Mart</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <input class="form-control mr-sm-2 search-input" type="search" placeholder="Search" aria-label="Search" id="filter">
+        <i class="fas fa-search"></i>
+        <span id="filter-count"></span>
+
+        <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item">
+                <a class="nav-link a" href="/shopping-cart/" style="color: whitesmoke">
+                    <i class="fab fa-opencart" ></i> &nbsp;Bucket
+                    <span class="badge" id="munny" style="color: whitesmoke">{{session.cart.totalQty}}</span>
+                </a>
+            </li>
+            <li class="nav-item dropdown active" >
+                <a class="nav-link dropdown-toggle" href="#"style="color: whitesmoke;margin-left: 20px" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user-circle" style="color: lightgray; font-size: 26px"></i> &nbsp;User
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {{#if login }}
+
+                        <a class="dropdown-item" href="/user/profile">Profile</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/user/logout">Logout</a>
+                    {{ else }}
+                        <a class="dropdown-item" href="/user/signup">Sign up</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/user/signin">Sign in</a>
+                    {{/if}}
+
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
+<script>
+
+    function additem(){
+        if (parseInt(document.getElementById("munny").innerHTML) > 0){
+
+            document.getElementById("munny").innerHTML =parseInt(document.getElementById("munny").innerHTML)  + 1;
+        }else{
+            document.getElementById("munny").innerHTML = "1";
+        }
+
+    }
+
+</script>
